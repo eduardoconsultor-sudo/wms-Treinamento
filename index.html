@@ -1046,6 +1046,8 @@ input[type=number]{width:80px;text-align:center;}
 </div>
 
 <!-- QUIZ 1 -->
+<div id="kpi-ch-1" style="padding:0 48px 8px;"></div>
+
 <div class="quiz-box" id="quiz1">
   <div class="quiz-title"><span class="badge-q">QUIZ</span> Teste seus conhecimentos — Recebimento</div>
   <div id="q1-body"></div>
@@ -1529,6 +1531,8 @@ input[type=number]{width:80px;text-align:center;}
   </div>
 </div>
 
+<div id="kpi-ch-2" style="padding:0 48px 8px;"></div>
+
 <div class="quiz-box" id="quiz2">
   <div class="quiz-title"><span class="badge-q">QUIZ</span> Teste seus conhecimentos — Armazenagem</div>
   <div id="q2-body"></div>
@@ -1655,6 +1659,8 @@ input[type=number]{width:80px;text-align:center;}
   <div class="sim-content" id="sim3-content"></div>
 </div>
 
+<div id="kpi-ch-3" style="padding:0 48px 8px;"></div>
+
 <div class="quiz-box" id="quiz3">
   <div class="quiz-title"><span class="badge-q">QUIZ</span> Teste seus conhecimentos — Gestão de Estoque</div>
   <div id="q3-body"></div>
@@ -1764,6 +1770,8 @@ input[type=number]{width:80px;text-align:center;}
     <text x="627" y="196" text-anchor="middle" fill="rgba(45,204,143,0.7)" font-family="DM Sans" font-size="7.5">Endereço abaixo do mínimo</text>
   </svg>
 </div>
+
+<div id="kpi-ch-4" style="padding:0 48px 8px;"></div>
 
 <div class="quiz-box" id="quiz4">
   <div class="quiz-title"><span class="badge-q">QUIZ</span> Teste seus conhecimentos — Gestão de Mão de Obra</div>
@@ -1902,6 +1910,8 @@ input[type=number]{width:80px;text-align:center;}
   <div class="sim-content" id="sim5-content"></div>
 </div>
 
+<div id="kpi-ch-5" style="padding:0 48px 8px;"></div>
+
 <div class="quiz-box" id="quiz5">
   <div class="quiz-title"><span class="badge-q">QUIZ</span> Teste seus conhecimentos — Picking</div>
   <div id="q5-body"></div>
@@ -1966,6 +1976,8 @@ input[type=number]{width:80px;text-align:center;}
   </svg>
 </div>
 
+<div id="kpi-ch-6" style="padding:0 48px 8px;"></div>
+
 <div class="quiz-box" id="quiz6">
   <div class="quiz-title"><span class="badge-q">QUIZ</span> Conferência de Saída</div>
   <div id="q6-body"></div>
@@ -2005,6 +2017,8 @@ input[type=number]{width:80px;text-align:center;}
   </div>
   <div class="sim-content" id="sim7-content"></div>
 </div>
+
+<div id="kpi-ch-7" style="padding:0 48px 8px;"></div>
 
 <div class="quiz-box" id="quiz7">
   <div class="quiz-title"><span class="badge-q">QUIZ</span> Packing</div>
@@ -2090,6 +2104,8 @@ input[type=number]{width:80px;text-align:center;}
     <text x="285" y="309" text-anchor="middle" fill="#00D4FF" font-family="DM Sans" font-size="8">↑ ESTE LADO</text>
   </svg>
 </div>
+
+<div id="kpi-ch-8" style="padding:0 48px 8px;"></div>
 
 <div class="quiz-box" id="quiz8">
   <div class="quiz-title"><span class="badge-q">QUIZ</span> Etiquetagem de Volume</div>
@@ -2341,6 +2357,8 @@ input[type=number]{width:80px;text-align:center;}
   </div>
   <div class="sim-content" id="sim9-content"></div>
 </div>
+<div id="kpi-ch-9" style="padding:0 48px 8px;"></div>
+
 <div class="quiz-box" id="quiz9">
   <div class="quiz-title"><span class="badge-q">QUIZ</span> Conferência de Volumes</div>
   <div id="q9-body"></div>
@@ -2416,6 +2434,8 @@ input[type=number]{width:80px;text-align:center;}
     <text x="200" y="225" text-anchor="middle" fill="rgba(122,144,168,0.5)" font-family="DM Sans" font-size="8">Princípio LIFO: última parada é carregada primeiro, primeira parada é carregada por último</text>
   </svg>
 </div>
+
+<div id="kpi-ch-10" style="padding:0 48px 8px;"></div>
 
 <div class="quiz-box" id="quiz10">
   <div class="quiz-title"><span class="badge-q">QUIZ</span> Carregamento</div>
@@ -4707,6 +4727,332 @@ function sim3Step6() {
 }
 
 
+
+// ═══════════════════════════════════════════════════════════
+// KPI ENGINE — Indicadores por Módulo WMS
+// ═══════════════════════════════════════════════════════════
+var kpiData = {
+  1: { // RECEBIMENTO
+    title: 'KPIs de Recebimento',
+    kpis: [
+      { name:'Acuracidade de Conferência', val:97.4, target:99.5, unit:'%', type:'gauge',
+        trend:[94,95.2,96.1,96.8,97.4], status:'warn',
+        analysis:'Abaixo da meta. Principais causas: conferência manual em 23% dos itens e rotatividade de operadores. Ação: ampliar uso do leitor RF.' },
+      { name:'Lead Time de Recebimento', val:3.8, target:4.0, unit:'h', type:'bar_inv',
+        trend:[5.1,4.6,4.2,4.0,3.8], status:'ok',
+        analysis:'Dentro da meta. Redução de 25% em 5 meses com agendamento de docas. Manter monitoramento nos picos de segunda-feira.' },
+      { name:'Taxa de Divergências', val:2.1, target:2.0, unit:'%', type:'bar_inv',
+        trend:[3.8,3.1,2.7,2.3,2.1], status:'warn',
+        analysis:'Marginalmente acima da meta. 68% das divergências são de quantidade, 22% avaria. Revisar embalagens do fornecedor ABC.' },
+      { name:'Produtividade (pal/h)', val:18, target:20, unit:'pal/h', type:'bar',
+        trend:[14,15,16,17,18], status:'warn',
+        analysis:'Tendência positiva de crescimento. Gap de 10% vs meta. Ajuste no layout da doca D3 pode adicionar +3 pal/h.' },
+      { name:'% Paletes Etiquetados Auto', val:94.2, target:100, unit:'%', type:'gauge',
+        trend:[85,88,91,93,94.2], status:'warn',
+        analysis:'5,8% dos paletes ainda recebem etiqueta manual. Verificar integração com impressoras das docas D2 e D4.' },
+      { name:'OTIF Fornecedores', val:87.3, target:95, unit:'%', type:'gauge',
+        trend:[82,84,85,86,87.3], status:'bad',
+        analysis:'Crítico: 12,7% das entregas com atraso ou incompletas. Top 3 fornecedores responsáveis por 78% das ocorrências. Acionar área de compras.' },
+    ]
+  },
+  2: { // ARMAZENAGEM
+    title: 'KPIs de Armazenagem',
+    kpis: [
+      { name:'Ocupação do Armazém', val:78.4, target:85, unit:'%', type:'gauge',
+        trend:[72,74,76,77,78.4], status:'warn',
+        analysis:'Abaixo da meta de 85% — espaço subutilizado. Rever slotting: 340 endereços zona C com itens que poderiam ir para zona B liberando frente.' },
+      { name:'Produtividade Putaway', val:22, target:25, unit:'pal/h', type:'bar',
+        trend:[18,19,20,21,22], status:'warn',
+        analysis:'Crescimento consistente +4 pal/h em 5 meses. Algoritmo de rota está reduzindo percurso médio. Implantação de task interleaving em fase de teste.' },
+      { name:'Acerto de Endereçamento', val:99.1, target:99.5, unit:'%', type:'gauge',
+        trend:[97.8,98.2,98.7,98.9,99.1], status:'ok',
+        analysis:'Muito próximo da meta. Erros residuais concentrados em itens com múltiplas embalagens (caixa/unidade). Parametrizar UoM no cadastro.' },
+      { name:'Tempo Médio Putaway', val:6.2, target:5.0, unit:'min', type:'bar_inv',
+        trend:[9.1,8.0,7.2,6.8,6.2], status:'warn',
+        analysis:'Redução de 32% desde set/24. Ainda 24% acima da meta. Distância média dos endereços de destino é o principal fator.' },
+      { name:'Taxa de Uso do Picking Dinâmico', val:71, target:90, unit:'%', type:'gauge',
+        trend:[45,52,60,66,71], status:'bad',
+        analysis:'SKUs curva A ainda alocados em zona B/C por falta de parametrização. Revisar regras de slotting para 87 SKUs de alta rotatividade.' },
+      { name:'Índice de Posições Bloqueadas', val:3.2, target:2.0, unit:'%', type:'bar_inv',
+        trend:[5.1,4.4,3.9,3.5,3.2], status:'warn',
+        analysis:'3,2% das posições bloqueadas impacta a disponibilidade de endereços. Principais causas: lotes vencidos (61%) e avarias não resolvidas (39%).' },
+    ]
+  },
+  3: { // GESTÃO DE ESTOQUE
+    title: 'KPIs de Gestão de Estoque',
+    kpis: [
+      { name:'Acuracidade de Estoque', val:98.7, target:99.5, unit:'%', type:'gauge',
+        trend:[96.2,97.0,97.8,98.3,98.7], status:'ok',
+        analysis:'Evolução consistente. Inventário rotativo semanal por curva A está surtindo efeito. Meta de 99,5% prevista para Q2/2025.' },
+      { name:'Cobertura de Estoque', val:18.4, target:21, unit:'dias', type:'bar',
+        trend:[24,22,20,19,18.4], status:'warn',
+        analysis:'Cobertura abaixo do ideal para sazonalidade. Revisão do parâmetro de ponto de reposição com o planejador de demanda recomendada.' },
+      { name:'Giro de Estoque (mês)', val:4.2, target:5.0, unit:'x', type:'bar',
+        trend:[3.1,3.4,3.7,4.0,4.2], status:'warn',
+        analysis:'Crescimento de 35% em 5 meses. 28% do valor total em itens com giro inferior a 2x/mês — candidatos a análise de obsolescência.' },
+      { name:'% Itens com Divergência', val:1.3, target:1.0, unit:'%', type:'bar_inv',
+        trend:[3.2,2.4,1.9,1.5,1.3], status:'warn',
+        analysis:'Redução de 59% no período. Principais SKUs divergentes: ARR-001, MAC-005 e ACU-003. Aumentar frequência do inventário cíclico nestes itens.' },
+      { name:'% Inventários no Prazo', val:91.4, target:95, unit:'%', type:'gauge',
+        trend:[82,85,88,90,91.4], status:'warn',
+        analysis:'Atrasos concentrados na 3ª semana do mês (pico operacional). Redistribuir tarefas de inventário para turnos da madrugada.' },
+      { name:'Itens com FEFO Correto', val:99.2, target:100, unit:'%', type:'gauge',
+        trend:[96.8,97.5,98.2,98.9,99.2], status:'ok',
+        analysis:'Quase meta. 0,8% de risco de expedição fora da regra FEFO concentrado em produtos refrigerados. Verificar configuração de categoria.' },
+    ]
+  },
+  4: { // MÃO DE OBRA
+    title: 'KPIs de Gestão de Mão de Obra',
+    kpis: [
+      { name:'Produtividade Geral', val:82, target:90, unit:'%', type:'gauge',
+        trend:[70,73,76,79,82], status:'warn',
+        analysis:'Crescimento de 17% desde set/24. Gap de 8% vs meta — principal oportunidade no turno da tarde (produtividade 12% menor que turno da manhã).' },
+      { name:'Taxa de Utilização MOD', val:76.4, target:85, unit:'%', type:'gauge',
+        trend:[68,70,72,74,76.4], status:'warn',
+        analysis:'23,6% do tempo em atividades não produtivas. Task interleaving pode reduzir ociosidade em ~15%. Implantação prevista para Q2/2025.' },
+      { name:'% Tarefas no Prazo', val:88.1, target:95, unit:'%', type:'gauge',
+        trend:[78,81,84,86,88.1], status:'warn',
+        analysis:'11,9% das tarefas atrasadas. Concentradas em picking de zona C (percurso longo). Avaliar reorganização do slotting nesta zona.' },
+      { name:'Custo por Tarefa (R$)', val:2.84, target:2.50, unit:'R$', type:'bar_inv',
+        trend:[3.60,3.30,3.10,2.95,2.84], status:'warn',
+        analysis:'Redução de 21% em 5 meses. Ainda acima da meta. Automação de 3 processos de conferência prevista para reduzir para R$ 2,50.' },
+      { name:'Horas Extras / Headcount', val:8.2, target:5.0, unit:'h/op', type:'bar_inv',
+        trend:[14,12,10,9.1,8.2], status:'warn',
+        analysis:'Redução significativa com melhor distribuição de demanda e programação da onda. Pico de horas extras nas sextas-feiras — rever planejamento.' },
+      { name:'Índice de Absenteísmo', val:3.8, target:3.0, unit:'%', type:'bar_inv',
+        trend:[5.2,4.8,4.3,4.0,3.8], status:'warn',
+        analysis:'Queda consistente com programa de qualidade de vida. 3,8% ainda impacta planejamento de escala — manter programa de engajamento.' },
+    ]
+  },
+  5: { // PICKING
+    title: 'KPIs de Picking',
+    kpis: [
+      { name:'Produtividade (linhas/h)', val:68, target:80, unit:'lin/h', type:'bar',
+        trend:[52,56,60,64,68], status:'warn',
+        analysis:'Crescimento de 30% em 5 meses com implantação de cluster picking. Atingir 80 lin/h requer expansão do cluster para zona C.' },
+      { name:'Taxa de Acerto', val:99.2, target:99.8, unit:'%', type:'gauge',
+        trend:[97.8,98.4,98.8,99.0,99.2], status:'ok',
+        analysis:'Excelente evolução. Erros residuais em itens de embalagem similar (SKUs look-alike). Implementar verificação de foto no picking destes itens.' },
+      { name:'Distância por Pedido (m)', val:210, target:150, unit:'m', type:'bar_inv',
+        trend:[380,320,280,245,210], status:'warn',
+        analysis:'Redução de 45% com cluster picking e slotting A/B/C. Algoritmo de roteirização da zona B ainda pode ser otimizado — redução adicional de ~30m.' },
+      { name:'Ciclo do Pedido (min)', val:18.4, target:15, unit:'min', type:'bar_inv',
+        trend:[32,27,24,21,18.4], status:'warn',
+        analysis:'Redução de 43% no ciclo. Gap de 3,4 min concentrado no tempo de consolidação na expedição. Revisar layout da área de staging.' },
+      { name:'% Wave Picking Utilizado', val:64, target:85, unit:'%', type:'gauge',
+        trend:[30,40,50,58,64], status:'bad',
+        analysis:'36% dos pedidos ainda em picking discreto. Ampliar regras de agrupamento de onda — janela de 2h e mesma transportadora são critérios sugeridos.' },
+      { name:'Fill Rate de Picking', val:96.8, target:99, unit:'%', type:'gauge',
+        trend:[93,94.2,95.1,96.0,96.8], status:'warn',
+        analysis:'3,2% de linhas com ruptura no momento do picking. 78% por divergência de estoque não capturada. Aumentar frequência do inventário cíclico curva A.' },
+    ]
+  },
+  6: { // CONFERÊNCIA DE SAÍDA
+    title: 'KPIs de Conferência de Saída',
+    kpis: [
+      { name:'% Pedidos sem Erro', val:98.4, target:99.5, unit:'%', type:'gauge',
+        trend:[95.2,96.4,97.2,97.9,98.4], status:'ok',
+        analysis:'Evolução consistente. 1,6% de erros residuais concentrados em pedidos multi-volume com itens de mesma família. Revisar fluxo de conferência por pesagem.' },
+      { name:'Taxa de Re-picking', val:1.6, target:0.5, unit:'%', type:'bar_inv',
+        trend:[4.8,3.6,2.8,2.1,1.6], status:'warn',
+        analysis:'Redução de 67% — forte resultado. Ainda 3x acima da meta. Principais causas: picking da zona C (58%) e itens fracionados (32%).' },
+      { name:'Tempo de Conferência (min)', val:4.2, target:3.0, unit:'min/ped', type:'bar_inv',
+        trend:[7.1,6.0,5.2,4.6,4.2], status:'warn',
+        analysis:'Redução de 41% em 5 meses. Conferência por pesagem é 1,8x mais rápida que por código — ampliar para mais categorias de produto.' },
+      { name:'% Conf. Eletrônica', val:87, target:100, unit:'%', type:'gauge',
+        trend:[60,68,75,81,87], status:'warn',
+        analysis:'13% dos pedidos ainda conferidos manualmente. Causa: itens sem código de barras legível. Ação: exigir etiquetagem padronizada dos fornecedores.' },
+      { name:'Divergências Detectadas', val:98.1, target:99, unit:'%', type:'gauge',
+        trend:[92,94,96,97.2,98.1], status:'ok',
+        analysis:'Eficiência de detecção quase total. 1,9% de erros passando pela conferência concentrado em pedidos com muitos itens — revisar amostragem.' },
+      { name:'SLA de Expedição', val:91.3, target:96, unit:'%', type:'gauge',
+        trend:[84,86,88,90,91.3], status:'warn',
+        analysis:'8,7% dos pedidos fora do SLA. Gargalo na conferência nos horários de pico (14h-16h). Redistribuir equipe e criar turno de apoio.' },
+    ]
+  },
+  7: { // PACKING
+    title: 'KPIs de Packing',
+    kpis: [
+      { name:'Produtividade (vol/h)', val:34, target:40, unit:'vol/h', type:'bar',
+        trend:[25,28,30,32,34], status:'warn',
+        analysis:'Crescimento de 36% em 5 meses com cartonização automática. Atingir 40 vol/h requer segundo terminal de cartonização na estação 3.' },
+      { name:'% Caixas Otimizadas', val:78.4, target:90, unit:'%', type:'gauge',
+        trend:[52,60,67,73,78.4], status:'warn',
+        analysis:'21,6% das embalagens ainda superdimensionadas. Biblioteca de caixas incompleta — cadastrar 12 novos SKUs de produto que não têm caixa ideal definida.' },
+      { name:'Custo por Volume (R$)', val:3.42, target:2.80, unit:'R$', type:'bar_inv',
+        trend:[4.80,4.30,3.90,3.65,3.42], status:'warn',
+        analysis:'Redução de 29% com cartonização. DIM Weight médio reduzido de 1,82 para 1,31 — economia de frete significativa. Meta de R$ 2,80 em Q3/2025.' },
+      { name:'Taxa de Avaria no Packing', val:0.8, target:0.3, unit:'%', type:'bar_inv',
+        trend:[2.1,1.6,1.2,1.0,0.8], status:'warn',
+        analysis:'Redução de 62%. Avarias residuais em itens frágeis sem proteção adequada (bubble wrap). Revisar POP de embalagem para categorias A3 e B7.' },
+      { name:'% Etiquetas SSCC Corretas', val:99.4, target:100, unit:'%', type:'gauge',
+        trend:[97.2,98.0,98.7,99.1,99.4], status:'ok',
+        analysis:'Excelente. 0,6% de erros residuais em etiquetas de volumes consolidados de clientes multijornada. Verificar regra de geração de SSCC para pedidos split.' },
+      { name:'Tempo de Setup por Onda', val:8.2, target:5.0, unit:'min', type:'bar_inv',
+        trend:[14,12,10.5,9.3,8.2], status:'warn',
+        analysis:'41% acima da meta. Setup inclui troca de material e configuração da balança. Criar kit de materiais pré-posicionado por tipo de pedido.' },
+    ]
+  },
+  8: { // ETIQUETAGEM
+    title: 'KPIs de Etiquetagem de Volume',
+    kpis: [
+      { name:'% Etiquetas Auto-geradas', val:96.4, target:100, unit:'%', type:'gauge',
+        trend:[80,85,90,93,96.4], status:'ok',
+        analysis:'3,6% ainda geradas manualmente. Causa: pedidos de clientes com layout personalizado de etiqueta. Desenvolvimento de template dinâmico em andamento.' },
+      { name:'Taxa de Erro de Etiquetagem', val:0.4, target:0.1, unit:'%', type:'bar_inv',
+        trend:[1.8,1.2,0.8,0.6,0.4], status:'warn',
+        analysis:'Redução de 78% — excelente evolução. Erros residuais: etiqueta aplicada invertida (62%) e SSCC ilegível por impressora descalibrada (38%).' },
+      { name:'Tempo de Emissão (seg/vol)', val:8, target:5, unit:'seg', type:'bar_inv',
+        trend:[18,14,12,10,8], status:'warn',
+        analysis:'Redução de 56% com impressoras térmicas mais rápidas. Meta de 5 seg requer upgrade de firmware das impressoras das estações 2 e 5.' },
+      { name:'Conformidade GS1/SSCC', val:98.8, target:100, unit:'%', type:'gauge',
+        trend:[94.2,95.8,97.0,98.1,98.8], status:'ok',
+        analysis:'1,2% de não-conformidade com o padrão GS1-128. Clientes do varejo exigem 100%. Correção na regra de geração do Application Identifier 00.' },
+      { name:'Etiquetas Reimpressas', val:2.1, target:1.0, unit:'%', type:'bar_inv',
+        trend:[5.4,4.2,3.3,2.6,2.1], status:'warn',
+        analysis:'Reimprimir implica parada de linha e risco de duplicidade. Limpeza preventiva das cabeças de impressão reduz 40% das reimpressões por falha.' },
+      { name:'% Leitura 1ª Passagem', val:97.8, target:99.5, unit:'%', type:'gauge',
+        trend:[92,94,95.5,96.8,97.8], status:'ok',
+        analysis:'Excelente evolução. 2,2% de releitura concentrada em etiquetas de volumes irregulares (sacas, rolos). Posicionamento padrão de etiqueta reduziria para 1%.' },
+    ]
+  },
+  9: { // CONFERÊNCIA DE VOLUMES
+    title: 'KPIs de Conferência de Volumes',
+    kpis: [
+      { name:'% Volumes Conferidos Eletron.', val:94.2, target:100, unit:'%', type:'gauge',
+        trend:[72,80,86,91,94.2], status:'ok',
+        analysis:'5,8% de volumes conferidos manualmente (romaneio em papel). Clientes sem integração EDI. Ampliar portal de integração para 8 novos clientes em Q2.' },
+      { name:'Divergência de Volume (%)', val:1.2, target:0.5, unit:'%', type:'bar_inv',
+        trend:[3.6,2.8,2.1,1.6,1.2], status:'warn',
+        analysis:'Redução de 67%. Divergências residuais em pedidos fracionados (parte entregue hoje, parte amanhã). Revisar regra de consolidação de romaneio.' },
+      { name:'Tempo Conferência (min/rom.)', val:7.4, target:5.0, unit:'min', type:'bar_inv',
+        trend:[14,11,9,8,7.4], status:'warn',
+        analysis:'47% acima da meta. Romaneios com 50+ volumes levam 3x mais tempo. Priorizar automação de conferência por leitor fixo (tunelagem) para volumes padronizados.' },
+      { name:'% Liberados na 1ª Conf.', val:91.8, target:97, unit:'%', type:'gauge',
+        trend:[80,84,87,90,91.8], status:'warn',
+        analysis:'8,2% necessitam 2ª conferência ou ajuste. Melhoria significativa mas ainda longe da meta. Conferência por pesagem como 1ª barreira reduziria retrabalho.' },
+      { name:'SSCC Bipado/Total', val:97.1, target:100, unit:'%', type:'gauge',
+        trend:[82,88,92,95,97.1], status:'ok',
+        analysis:'2,9% sem leitura de SSCC — volumes sem etiqueta legível ou etiqueta danificada. Controle de qualidade na saída do packing deve ser reforçado.' },
+      { name:'Aderência ao Romaneio', val:98.4, target:99.5, unit:'%', type:'gauge',
+        trend:[94,95.5,96.8,97.8,98.4], status:'ok',
+        analysis:'1,6% de volumes fora do romaneio. Em 89% dos casos o volume é encontrado — erro de lançamento no WMS. Conferência dupla na montagem de carga recomendada.' },
+    ]
+  },
+  10: { // CARREGAMENTO
+    title: 'KPIs de Carregamento',
+    kpis: [
+      { name:'OTIF (On Time In Full)', val:91.4, target:96, unit:'%', type:'gauge',
+        trend:[84,86,88,90,91.4], status:'warn',
+        analysis:'8,6% dos carregamentos com atraso ou incompletos. Principal causa: atraso na emissão do CT-e por divergência de NF. Integração TMS reduz em 60% esse tempo.' },
+      { name:'Utilização do Veículo', val:82.3, target:90, unit:'%', type:'gauge',
+        trend:[70,74,77,80,82.3], status:'warn',
+        analysis:'17,7% de espaço não aproveitado. Load planning LIFO configurado para 5 paradas — ampliar para 8 aumentaria utilização para ~88%.' },
+      { name:'Tempo de Carregamento', val:48, target:35, unit:'min/veíc', type:'bar_inv',
+        trend:[78,68,60,54,48], status:'warn',
+        analysis:'Redução de 38% em 5 meses com dock door management. Meta de 35 min requer equipe de 3 operadores no carregamento (hoje: 2). Análise de custo/benefício em andamento.' },
+      { name:'% Docs Emitidos Auto', val:88.4, target:100, unit:'%', type:'gauge',
+        trend:[62,70,76,82,88.4], status:'warn',
+        analysis:'11,6% de documentos emitidos manualmente (CT-e e Romaneio). Bloqueio por inconsistência de CNPJ do destinatário em 73% dos casos — validação no cadastro.' },
+      { name:'Avarias no Carregamento', val:0.6, target:0.2, unit:'%', type:'bar_inv',
+        trend:[2.1,1.6,1.1,0.8,0.6], status:'warn',
+        analysis:'Redução de 71% com load planning LIFO correto. 0,6% residual em produtos frágeis na base da carga. Revisar sequenciamento de itens por fragilidade.' },
+      { name:'Doca Ociosa (h/dia)', val:2.4, target:1.0, unit:'h/dia', type:'bar_inv',
+        trend:[5.2,4.1,3.4,2.9,2.4], status:'warn',
+        analysis:'Janelas de doca com 2,4h ociosas/dia. Melhor agendamento e notificação prévia das transportadoras pode reduzir para 1h. Revisar política de janela mínima.' },
+    ]
+  }
+};
+
+function initKPIs() {
+  for (var ch = 1; ch <= 10; ch++) {
+    renderKPIs(ch);
+  }
+}
+
+function renderKPIs(ch) {
+  var cont = document.getElementById('kpi-ch-' + ch);
+  if (!cont || !kpiData[ch]) return;
+
+  var d = kpiData[ch];
+  var html = '<div class="section-title" style="margin-bottom:16px;">📊 ' + d.title + '</div>';
+  html += '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-bottom:8px;">';
+
+  d.kpis.forEach(function(k) {
+    var statusColor = k.status === 'ok' ? '#2DCC8F' : k.status === 'warn' ? '#FFD700' : '#FF6B35';
+    var statusLabel = k.status === 'ok' ? '✅ Meta atingida' : k.status === 'warn' ? '⚠ Abaixo da meta' : '❌ Crítico';
+    var trendUp = k.trend[k.trend.length-1] >= k.trend[0];
+    var betterUp = k.type !== 'bar_inv'; // bar_inv means lower is better
+    var trendGood = betterUp ? trendUp : !trendUp;
+    var trendIcon = trendGood ? '↗' : '↘';
+    var trendColor = trendGood ? '#2DCC8F' : '#FF6B35';
+
+    html += '<div style="background:var(--card);border:1px solid var(--border);border-left:3px solid ' + statusColor + ';border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:10px;">';
+
+    // Header
+    html += '<div style="display:flex;justify-content:space-between;align-items:flex-start;">';
+    html += '<div style="font-size:0.8rem;font-weight:700;color:var(--text);line-height:1.3;max-width:160px;">' + k.name + '</div>';
+    html += '<span style="font-size:0.65rem;padding:2px 8px;border-radius:10px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.4);white-space:nowrap;">' + statusLabel + '</span>';
+    html += '</div>';
+
+    // Value + trend
+    html += '<div style="display:flex;align-items:flex-end;gap:12px;">';
+    html += '<div>';
+    html += '<div style="font-family:var(--head);font-size:1.8rem;font-weight:900;color:' + statusColor + ';line-height:1;">' + k.val + '<span style="font-size:0.75rem;font-weight:400;color:var(--muted);margin-left:3px;">' + k.unit + '</span></div>';
+    html += '<div style="font-size:0.68rem;color:var(--muted);margin-top:2px;">Meta: <strong style="color:rgba(255,255,255,0.5);">' + k.target + ' ' + k.unit + '</strong></div>';
+    html += '</div>';
+    html += '<div style="flex:1;">' + kpiMiniChart(k) + '</div>';
+    html += '<div style="font-size:1rem;color:' + trendColor + ';font-weight:700;">' + trendIcon + '</div>';
+    html += '</div>';
+
+    // Analysis
+    html += '<div style="font-size:0.72rem;color:var(--muted);line-height:1.6;padding:8px 10px;background:rgba(255,255,255,0.02);border-radius:6px;border-left:2px solid ' + statusColor + ';">' + k.analysis + '</div>';
+    html += '</div>';
+  });
+
+  html += '</div>';
+  cont.innerHTML = html;
+}
+
+function kpiMiniChart(k) {
+  var w = 100, h = 40;
+  var vals = k.trend;
+  var min = Math.min.apply(null, vals) * 0.95;
+  var max = Math.max.apply(null, vals) * 1.02;
+  var rng = max - min || 1;
+
+  if (k.type === 'gauge') {
+    // Sparkline + mini gauge arc
+    return kpiSparkline(vals, min, max, rng, w, h, k);
+  } else {
+    return kpiSparkline(vals, min, max, rng, w, h, k);
+  }
+}
+
+function kpiSparkline(vals, min, max, rng, w, h, k) {
+  var statusColor = k.status === 'ok' ? '#2DCC8F' : k.status === 'warn' ? '#FFD700' : '#FF6B35';
+  var points = vals.map(function(v, i) {
+    var x = (i / (vals.length - 1)) * (w - 4) + 2;
+    var y = h - 4 - ((v - min) / rng) * (h - 8);
+    return x.toFixed(1) + ',' + y.toFixed(1);
+  }).join(' ');
+
+  var lastX = (parseFloat(points.split(' ').pop().split(',')[0]));
+  var lastY = (parseFloat(points.split(' ').pop().split(',')[1]));
+
+  // Fill area
+  var firstX = 2, lastXf = (w - 2);
+  var fillPts = '2,' + (h-2) + ' ' + points + ' ' + lastXf + ',' + (h-2);
+
+  var svg = '<svg viewBox="0 0 ' + w + ' ' + h + '" style="width:100%;height:' + h + 'px;">';
+  svg += '<polygon points="' + fillPts + '" fill="' + statusColor + '" opacity="0.08"/>';
+  svg += '<polyline points="' + points + '" fill="none" stroke="' + statusColor + '" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>';
+  svg += '<circle cx="' + lastX + '" cy="' + lastY + '" r="2.5" fill="' + statusColor + '"/>';
+  svg += '</svg>';
+  return svg;
+}
+
+
 // ===================== INITIALIZE =====================
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -4718,6 +5064,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (ch0) ch0.style.display = 'block';
 
   // Init simulations & quizzes — wrapped so errors don't break navigation
+  try { initKPIs(); } catch(e) { console.warn('initKPIs:', e); }
   try { sim1Init(); } catch(e) { console.warn('sim1Init:', e); }
   try { initSim2(); } catch(e) { console.warn('initSim2:', e); }
   try { initSim3(); } catch(e) { console.warn('initSim3:', e); }
