@@ -2374,14 +2374,14 @@ input[type=number]{width:80px;text-align:center;}
 </div><div class="ch-hero-photo"><img src="https://images.pexels.com/photos/1267327/pexels-photo-1267327.jpeg?auto=compress&cs=tinysrgb&w=700&h=380&fit=crop" alt="Doca de carregamento — caminhão na doca" loading="lazy" onerror="this.src='https://images.pexels.com/photos/2449454/pexels-photo-2449454.jpeg?auto=compress&cs=tinysrgb&w=700&h=380&fit=crop'"></div></div></div>
 <div class="section-title">Processo de Carregamento</div>
 <div class="concept-grid">
-  <div class="concept-card"><span class="cc-icon">🚚</span><h4>Dock Door Management</h4><p>O WMS gerencia quais docas estão disponíveis e designa automaticamente a doca mais eficiente para cada veículo com base na rota e nos volumes a carregar, evitando conflitos e filas.</p><span class="tag">Dock Scheduling</span></div>
-  <div class="concept-card"><span class="cc-icon">📐</span><h4>Otimização de Carga (Load Planning)</h4><p>O WMS calcula a sequência de carregamento baseada na rota de entrega (último a entregar = primeiro a carregar - LIFO da entrega). Maximiza o espaço útil do veículo e respeita limites de peso por eixo.</p><span class="tag">Load Optimization</span></div>
-  <div class="concept-card"><span class="cc-icon">📄</span><h4>Emissão de Documentos</h4><p>Ao finalizar o carregamento, o WMS emite automaticamente: CT-e (Conhecimento de Transporte), manifesto de volumes, romaneio por destinatário e lista de conferência para o motorista.</p><span class="tag">Fiscal / Legal</span></div>
-  <div class="concept-card"><span class="cc-icon">📡</span><h4>Integração com TMS</h4><p>O WMS transmite ao TMS todos os dados de carga (volumes, pesos, destinos, valores) acionando automaticamente o cálculo de frete, roteirização e emissão do CT-e via SEFAZ.</p><span class="tag">TMS Integration</span></div>
+  <div class="concept-card"><span class="cc-icon">🚚</span><h4>Gestão de Pátio e Docas (YMS)</h4><p>gestão de pátio para controlar o fluxo de veículos desde a portaria. O sistema organiza o agendamento e a ocupação das docas em tempo real, garantindo que o veículo certo esteja na doca correta para minimizar o tempo de espera (TAT).</p><span class="tag">Yard Management</span></div>
+  <div class="concept-card"><span class="cc-icon">📐</span><h4>Conferência de Carregamento (Load Planning)</h4><p>Validação final via coletor de dados no momento do embarque. O sistema exige a leitura das etiquetas de volume (SSCC) ou paletes, garantindo que nenhum item seja esquecido ou carregado no veículo errado, assegurando 100% de conformidade com o romaneio.</p><span class="tag">Auditoria de Embarque</span></div>
+  <div class="concept-card"><span class="cc-icon">📄</span><h4>Integração WMS e TMS</h4><p>Sincronização imediata entre o armazém e a gestão de transportes. Após o carregamento, o sistema comunica a conclusão para a emissão automática de CT-e, MDF-e e manifestos, enviando os dados de rastreio para o cliente final.</p><span class="tag">Fluxo Documental</span></div>
+
 </div>
 
 <div class="illustration-box">
-  <h3>Sequência de Carregamento — Rota LIFO</h3>
+  <h3>Sequência de Carregamento — Rota</h3>
   <svg width="100%" viewBox="0 0 760 230" xmlns="http://www.w3.org/2000/svg">
     <!-- Truck -->
     <rect x="20" y="60" width="360" height="140" rx="8" fill="rgba(255,255,255,0.02)" stroke="rgba(255,107,53,0.3)" stroke-width="1.5"/>
@@ -3690,9 +3690,9 @@ const quizData = {
     { q: "Por que o WMS não permite carregar um pedido com volumes faltando?", opts: ["Para economizar espaço no caminhão", "Para garantir que o pedido chegue completo ao cliente — consolidação obrigatória", "Para facilitar o cálculo de frete", "Por exigência da ANTT para cargas fracionadas"], a: 1, exp: "O WMS bloqueia o carregamento de pedidos incompletos — nenhum cliente deve receber uma entrega parcial sem conhecimento prévio." }
   ],
   10: [
-    { q: "Por que o produto da última parada da rota deve ser carregado por último no caminhão?", opts: ["Para evitar danos durante o transporte", "Para ser o primeiro a ser descarregado — princípio LIFO de entrega", "Para ocupar menos espaço no veículo", "Por exigência das transportadoras"], a: 1, exp: "LIFO de entrega: o primeiro destino deve estar mais acessível (próximo à porta) — portanto é carregado por último." },
+    { q: "Por que o produto da primeira parada da rota deve ser carregado por último no caminhão?", opts: ["Para evitar danos durante o transporte", "Para ser o primeiro a ser descarregado — princípio LIFO de entrega", "Para ocupar menos espaço no veículo", "Por exigência das transportadoras"], a: 1, exp: "LIFO de entrega: o primeiro destino deve estar mais acessível (próximo à porta) — portanto é carregado por último." },
     { q: "O que é Dock Door Management?", opts: ["Sistema de fechamento automático de portões", "Gestão inteligente de docas para evitar conflitos e otimizar designação de veículos", "Controle de acesso de motoristas ao pátio", "Monitoramento de temperatura das docas refrigeradas"], a: 1, exp: "Dock Door Management designa automaticamente a doca mais eficiente para cada veículo com base na rota, produto e disponibilidade." },
-    { q: "Quais documentos são emitidos automaticamente ao finalizar o carregamento?", opts: ["Apenas a nota fiscal de saída", "CT-e, manifesto de volumes, romaneio e lista do motorista", "Somente o romaneio de volumes", "Fatura e boleto para o cliente"], a: 1, exp: "O WMS emite automaticamente todos os documentos fiscais e logísticos: CT-e (via SEFAZ), manifesto, romaneio e instruções ao motorista." }
+    { q: "Quais documentos são emitidos automaticamente ao finalizar o carregamento?", opts: ["Apenas a nota fiscal de saída", "Manifesto de carga, romaneio e lista do motorista", "Somente o romaneio de volumes", "Fatura e boleto para o cliente"], a: 1, exp: "O WMS emite automaticamente todos os documentos fiscais e logísticos: CT-e (via SEFAZ), manifesto, romaneio e instruções ao motorista." }
   ],
 
   11: [
