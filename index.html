@@ -1929,10 +1929,10 @@ input[type=number]{width:80px;text-align:center;}
 
 <div class="section-title">Processo de Conferência de Saída</div>
 <div class="concept-grid">
-  <div class="concept-card"><span class="cc-icon">📷</span><h4>Conferência por Leitura de Código</h4><p>O operador lê o código de barras ou QR Code de cada item separado. O WMS valida o SKU, quantidade, lote e série em tempo real, alertando imediatamente para qualquer erro.</p><span class="tag">Barcode / RFID</span></div>
-  <div class="concept-card"><span class="cc-icon">⚖️</span><h4>Conferência por Pesagem</h4><p>O pedido é pesado em balança integrada ao WMS. O sistema compara com o peso teórico calculado (soma dos pesos dos itens). Desvios acima do tolerado bloqueiam o prosseguimento.</p><span class="tag">Weight Verification</span></div>
-  <div class="concept-card"><span class="cc-icon">📸</span><h4>Registro Fotográfico</h4><p>O WMS pode acionar câmera para registrar foto dos itens conferidos, criando evidência rastreável de qualquer divergência reclamada posteriormente pelo cliente.</p><span class="tag">Evidência Digital</span></div>
-  <div class="concept-card"><span class="cc-icon">🔄</span><h4>Re-picking Automático</h4><p>Quando identificado um erro de picking (item errado, quantidade incorreta), o WMS cria automaticamente uma nova tarefa de re-picking, sem necessidade de intervenção manual do supervisor.</p><span class="tag">Auto Recovery</span></div>
+  <div class="concept-card"><span class="cc-icon">📷</span><h4>Conferência Cega e Validação</h4><p>O processo exige a bipagem de cada item sem que o operador saiba a quantidade esperada. O WMS Senior valida instantaneamente SKU, lote, validade e número de série, garantindo que o produto físico seja exatamente o que foi faturado no ERP.</p><span class="tag">Acuracidade 100%</span></div>
+  <div class="concept-card"><span class="cc-icon">⚖️</span><h4>Formação de Volumes (Packing)</h4><p>Durante a conferência, o sistema orienta a organização dos itens em caixas ou paletes de envio. O WMS registra quais itens estão em cada volume, gerando a etiqueta de despacho (SSCC) e o packing list detalhado para facilitar a conferência no destino.</p><span class="tag">estão de Volumes</span></div>
+  <div class="concept-card"><span class="cc-icon">📸</span><h4>Integração e Liberação Fiscal</h4><p>Após a conclusão da conferência, o WMS comunica o fechamento do checkout ao ERP para a emissão da Nota Fiscal ou liberação do documento de transporte. O sistema garante que nenhum veículo saia do CD sem a devida validação sistêmica de todos os itens.</p><span class="tag">Compliance Fiscal</span></div>
+  <div class="concept-card"><span class="cc-icon">🔄</span><h4>Agilidade no Fracionado e E-commerce.</h4><p>deal para separar pedidos de alta rotatividade. O operador bipa o item e o WMS indica visualmente (via sinal luminoso ou monitor) em qual "colmeia" o produto deve ser depositado. Ao completar o pedido na colmeia, o sistema já dispara o fechamento do volume e a emissão da etiqueta.</p><span class="tag">Alta Performance / E-commerce</span></div>
 </div>
 
 <div class="illustration-box">
@@ -1949,7 +1949,7 @@ input[type=number]{width:80px;text-align:center;}
     <rect x="150" y="45" width="130" height="80" rx="8" fill="rgba(0,212,255,0.08)" stroke="rgba(0,212,255,0.3)" stroke-width="1.5"/>
     <text x="215" y="75" text-anchor="middle" fill="#00D4FF" font-family="Sora" font-size="9" font-weight="600">ESTAÇÃO DE</text>
     <text x="215" y="89" text-anchor="middle" fill="#00D4FF" font-family="Sora" font-size="9" font-weight="600">CONFERÊNCIA</text>
-    <text x="215" y="106" text-anchor="middle" fill="rgba(0,212,255,0.6)" font-family="DM Sans" font-size="8">Leitura código + Peso</text>
+    <text x="215" y="106" text-anchor="middle" fill="rgba(0,212,255,0.6)" font-family="DM Sans" font-size="8">Leitura código + Quantidade</text>
     <line x1="280" y1="85" x2="308" y2="85" stroke="#7A90A8" stroke-width="1.5" marker-end="url(#ao)"/>
     <rect x="310" y="55" width="110" height="60" rx="8" fill="rgba(45,204,143,0.1)" stroke="rgba(45,204,143,0.3)" stroke-width="1"/>
     <text x="365" y="82" text-anchor="middle" fill="#2DCC8F" font-family="DM Sans" font-size="9" font-weight="600">WMS valida</text>
